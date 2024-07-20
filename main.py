@@ -12,7 +12,7 @@ intents.message_content = True
 intents.members = True  # Нужно для получения списка участников
 
 # Инициализация бота
-bot = commands.Bot(command_prefix="$", intents=intents, proxy='http://proxy.server:3128')
+bot = commands.Bot(command_prefix="$", intents=intents)
 
 # ID ролей
 AUTHORIZED_ROLE_ID = ROLE_ID  # Замените на ID роли, которая может выполнять команду
@@ -30,36 +30,7 @@ async def send_picture(channel):
     await channel.send(file=discord.File(picture_path))
 
 async def send_random_message(channel):
-    messages = [
-        "Ave Sos, Deus UwU!",
-        "Слава нашему кайзеру!",
-        "Брунчик я тебя люблю",
-        "UwU",
-        "OwO",
-        "Наш кайзер самый лучший",
-        "Кайзер пойдём нашиться под пледиком?",
-        "Брунчик давай в танки поиграем",
-        "Брунчик я купила водочки",
-        "Gott mit uns",
-        "Ты заставляешь мое сердце биться чаще.",
-        "Строить корабли - важно",
-        ':heart:',
-        'Ня',
-        'Мурр',
-        'Трогать можно только бруно!',
-        'Мяу',
-        'Я делаю кущац',
-        'https://cdn.discordapp.com/attachments/1220093141714206793/1237403955823120434/60.mov?ex=663b85bc&is=663a343c&hm=cd64f243ae7076aa4c98829f19779b9970ce85adc25870eedfac81702a32ed46&',
-        'Очень жду вечный сон! :heart:',
-        'Бомбить бомбить бомбить бомбить!',
-        'Я думаю о Бруно с утра до вечера…',
-        'Бруно такой мужественный и сильный, что мне всегда хочется скорее прижаться к нему…',
-        'Моя жизнь сияет с того момента, как ты появился в ней!',
-        'Ты принес свет в мою жизнь.',
-        'Ты стал благословением в моей жизни.',
-        'От тебя в груди трепещет всё — да так, что глаз не отвести.',
-        'Гоп стоп, он подошёл из-за угла...'
-    ]
+    messages = ['YOUR_MESSAGES']
 
     message = random.choice(messages)
     await channel.send(message)
