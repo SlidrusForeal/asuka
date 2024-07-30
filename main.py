@@ -43,7 +43,7 @@ async def check_time():
 
         # Проверка на 7:30
         if current_time.hour == 7 and current_time.minute == 30:
-            channel = bot.get_channel(1223373351209402504)
+            channel = bot.get_channel(CHANNEL_ID)
             if channel:
                 await send_gif(channel,
                                'https://tenor.com/view/asuka-langley-langley-asuka-evangelion-neon-genesis-evangelion-gif-8796834862117941782')
@@ -52,7 +52,7 @@ async def check_time():
 
         # Проверка на время с 8:00 до 21:00
         elif 8 <= current_time.hour < 22:
-            channel = bot.get_channel(1223373351209402504)  # 1237117168567582831
+            channel = bot.get_channel(CHANNEL_ID)
 
             # Проверка на время отправки случайного сообщения (каждые 2 часа)
             if current_time.hour % 2 == 0 and current_time.minute == 0:
@@ -63,7 +63,7 @@ async def check_time():
 
         # Проверка на 22:00
         elif current_time.hour == 0 and current_time.minute == 0:
-            channel = bot.get_channel(1237117168567582831)
+            channel = bot.get_channel(CHANNEL_ID)
             if channel:
                 await send_picture(channel)
             else:
@@ -71,7 +71,7 @@ async def check_time():
 
         # Проверка на 23:00
         elif current_time.hour == 23 and current_time.minute == 0:
-            channel = bot.get_channel(1223373351209402504)
+            channel = bot.get_channel(CHANNEL_ID)
             if channel:
                 await send_gif(channel, 'https://tenor.com/view/asuka-langley-gif-26114337')
             else:
